@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import Milk from './components/Milk';
+import MilkHook from './components/MilkHook';
+import Juice from './components/Juice';
+import store from './redux/store';
+import User from './components/User';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Milk />
+      <hr />
+      <MilkHook />
+      <hr />
+      <Juice />
+      <hr />
+      <User />
+    </Provider>
   );
 }
 
